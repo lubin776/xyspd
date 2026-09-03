@@ -5,21 +5,22 @@ on:
     inputs:
       targets:
         description: |
-          可选。每行一个「名称|接口链接」，留空则使用脚本内置默认接口。
+          可选。每行一个「名称|接口链接」，留空则使用脚本内置默认接口(5/0~5/3)。
           例：
             5_0|https://0.12yue.de5.net/5/0
             5_1|https://0.12yue.de5.net/5/1
         required: false
         type: string
-  schedule:
-    - cron: "0 18 * * *"   # 每天 UTC 18:00（北京时间 02:00）跑一次，按需改/关
+  push:
+    paths:
+      - 'seeds/**'   # seeds 输入档变更时自动跑一次
 
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 300    # 单次 run 上限（GitHub-hosted 硬顶 360）
+    timeout-minutes: 300
     permissions:
-      contents: write       # 需要写权限才能 push
+      contents: write   # 需要写权限才能 push
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,22 +32,32 @@ jobs:
           python-version: "3.11"
 
       - name: 采集并本地化
+        id: crawl
         run: |
+          set -u   # 遇未定义变量报错（不用 set -e，自行处理退出码）
           mkdir -p resources
-          # 把输入框按换行拆成 --targets 参数（兼容 Windows 换行符）
+          # 把输入框按换行拆成 --target 参数（兼容 Windows CRLF）
           TARGETS=$(printf '%s\n' "${{ github.event.inputs.targets || '' }}" \
-                      | tr -d '\r' | grep -v '^[[:space:]]*$' | sed 's/^/ /')
-          python scripts/rel2abs_localize.py --seeds seeds --out resources $TARGETS
+                      | tr -d '\r' | grep -v '^[[:space:]]*$')
+          if [ -n "$TARGETS" ]; then
+            echo "$TARGETS" | while IFS= read -r line; do
+              python scripts/rel2abs_localize.py \
+                --seeds seeds --out resources --target "$line" \
+                || echo "::warning::接口失败: $line"
+            done
+          else
+            python scripts/rel2abs_localize.py --seeds seeds --out resources \
+              || echo "::warning::全部接口失败(可能被 WAF 403), 见上方日志"
+          fi
+          # 输出是否有产物，供下一步判断要不要 commit
+          echo "has_resources=$(ls -A resources/ 2>/dev/null | head -c1 | wc -l)" >> $GITHUB_OUTPUT
 
       - name: 提交托管
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resources/ seeds/
-          git diff --cached --quiet || git commit -m "chore(sync): 采集资源 [skip ci]"
-          git push
+        if: steps.crawl.outputs.has_resources == '1'
+        run: bash .github/workflows/commit_step.sh
 
-      - name: 上传产物（单次 run 留存，30天）
+      - name: 上传产物（单次 run 留存, 30天）
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: resources
