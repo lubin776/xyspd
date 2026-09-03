@@ -12,8 +12,8 @@ on:
         description: |
           多组接口，每组一行，格式：名称|链接
           示例：
-            摸鱼儿|http://www.小不点.com
-            肥猫|https://jk.catvod.site/
+            4k|https://0.12yue.de5.net/666/4k
+            下载|https://0.12yue.de5.net/0/666
             菠菜园|https://0.12yue.de5.net/5/api.json
         required: true
         type: string
