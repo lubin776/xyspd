@@ -1,79 +1,54 @@
-name: 资源采集托管（相对→绝对→本地化）
+name: 资源采集托管
 
 on:
   workflow_dispatch:
     inputs:
       targets:
         description: |
-          可选：覆盖默认接口。一行一个 "名称|链接"。留空则使用内置的 0~3 接口。
-          内置：
-            0 = https://0.12yue.de5.net/5/0
-            1 = https://0.12yue.de5.net/5/1
-            2 = https://0.12yue.de5.net/5/2
-            3 = https://0.12yue.de5.net/5/3
+          可选。每行一个「名称|接口链接」，留空则使用脚本内置默认接口。
+          例：
+            5_0|https://0.12yue.de5.net/5/0
+            5_1|https://0.12yue.de5.net/5/1
         required: false
-        default: ""
+        type: string
   schedule:
-    - cron: "0 4 * * *"   # 每天 UTC 4:00（北京时间 12:00）自动跑一次
-  push:
-    paths:
-      - "seeds/**"
-      - "scripts/**"
+    - cron: "0 18 * * *"   # 每天 UTC 18:00（北京时间 02:00）跑一次，按需改/关
 
 jobs:
-  sync:
+  crawl:
     runs-on: ubuntu-latest
+    timeout-minutes: 300    # 单次 run 上限（GitHub-hosted 硬顶 360）
     permissions:
-      contents: write
+      contents: write       # 需要写权限才能 push
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: 准备 Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 组装 targets 参数
-        id: prep
-        run: |
-          if [ -n "${{ github.event.inputs.targets }}" ]; then
-            # 把多行 "名称|链接" 转成空格分隔，正确转义
-            ARGS=$(printf '%s\n' "${{ github.event.inputs.targets }}" \
-                   | grep -v '^[[:space:]]*$' \
-                   | sed 's/"/\\"/g' \
-                   | awk '{printf "\"%s\" ", $0}')
-            echo "args=$ARGS" >> $GITHUB_OUTPUT
-          else
-            echo "args=" >> $GITHUB_OUTPUT
-          fi
-
-      - name: 运行采集（相对→绝对→本地化）
+      - name: 采集并本地化
         run: |
           mkdir -p resources
-          CMD="python scripts/rel2abs_localize.py --out resources"
-          if [ -n "${{ steps.prep.outputs.args }}" ]; then
-            CMD="$CMD --targets ${{ steps.prep.outputs.args }}"
-          fi
-          echo "RUN: $CMD"
-          eval $CMD
+          # 把输入框按换行拆成 --targets 参数（兼容 Windows 换行符）
+          TARGETS=$(printf '%s\n' "${{ github.event.inputs.targets || '' }}" \
+                      | tr -d '\r' | grep -v '^[[:space:]]*$' | sed 's/^/ /')
+          python scripts/rel2abs_localize.py --seeds seeds --out resources $TARGETS
 
-      - name: 提交并推送
+      - name: 提交托管
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add resources/
-          if git diff --cached --quiet; then
-            echo "无变更，跳过提交"
-            exit 0
-          fi
-          git commit -m "chore(sync): 更新资源快照 [skip ci]"
+          git add resources/ seeds/
+          git diff --cached --quiet || git commit -m "chore(sync): 采集资源 [skip ci]"
           git push
 
-      - name: 上传本次产物（供即时下载）
+      - name: 上传产物（单次 run 留存，30天）
         uses: actions/upload-artifact@v4
         with:
-          name: resources-${{ github.run_number }}
+          name: resources
           path: resources/
           retention-days: 30
