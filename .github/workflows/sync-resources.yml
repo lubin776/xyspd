@@ -1,40 +1,20 @@
-name: 批量资源采集与托管
+name: 资源采集托管
 
 on:
   workflow_dispatch:
     inputs:
-      # 核心参数：多组接口，格式 "名称1|链接1\n名称2|链接2"
-      # 示例：
-      #   摸鱼儿|http://www.小不点.com
-      #   肥猫|https://jk.catvod.site/
-      #   菠菜园|https://0.12yue.de5.net/5/api.json
-      resources:
+      targets:
         description: |
-          多组接口，每组一行，格式：名称|链接
-          示例：
-            4k|https://0.12yue.de5.net/666/4k
-            下载|https://0.12yue.de5.net/0/666
+          要采集的接口，一行一个 "名称|链接"。留空则使用仓库内置的两个默认接口。
+          例：
+            tv菠菜|https://0.12yue.de5.net/5/tv.json
             菠菜园|https://0.12yue.de5.net/5/api.json
-        required: true
-        type: string
-        default: |
-          摸鱼儿|http://www.小不点.com
-          肥猫|https://jk.catvod.site/
-          菠菜园|https://0.12yue.de5.net/5/api.json
-
-      # 每个接口最多下载几个资源文件（防止单次跑太久 / 仓库过大）
-      max_files:
-        description: "每个接口最多下载的资源文件数量 (0 = 全部下载)"
         required: false
-        type: number
-        default: 20
-
-      # 单次运行总文件上限（硬保护）
-      global_max:
-        description: "单次运行全局最多下载文件数 (安全阀)"
-        required: false
-        type: number
-        default: 200
+        default: ""
+  schedule:
+    - cron: "0 18 * * *"   # 每天北京时间凌晨2点（UTC 18:00）自动跑一次；不需要可删掉
+  push:
+    branches: [main, master]
 
 jobs:
   sync:
@@ -42,58 +22,25 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout 仓库
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: 准备 Python 环境
+      - name: 设置 Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 安装依赖
-        run: |
-          pip install -q requests
-          sudo apt-get update -qq
-          # 如需下载 m3u8 完整视频，取消下一行注释
-          # sudo apt-get install -y ffmpeg
-
-      - name: 解析参数并批量采集
-        id: batch
+      - name: 运行采集
         env:
-          RESOURCES: ${{ inputs.resources }}
-          MAX_FILES: ${{ inputs.max_files }}
-          GLOBAL_MAX: ${{ inputs.global_max }}
+          TZ: Asia/Shanghai
         run: |
-          mkdir -p resources
-          python scripts/batch_download.py
+          python scripts/download.py \
+            ${{ github.event.inputs.targets && format('--targets "{0}"', github.event.inputs.targets) || '' }}
 
-      - name: 汇总运行报告
-        if: always()
-        run: |
-          echo "## 📊 批量采集报告" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ -f batch_report.md ]; then
-            cat batch_report.md >> $GITHUB_STEP_SUMMARY
-          else
-            echo "无报告生成" >> $GITHUB_STEP_SUMMARY
-          fi
-
-      - name: 提交并推送 (若无变更则跳过)
-        uses: EndBug/add-and-commit@v9
+      - name: 提交并推送
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          author_name: "github-actions[bot]"
-          author_email: "github-actions[bot]@users.noreply.github.com"
-          message: |
-            chore(resources): 批量采集更新 [skip ci]
-
-            ${{ steps.batch.outputs.commit_body || '' }}
-          add: "resources/*"
-          push: true
-          default_author: github_actions
-          force: false
-          signoff: false
-          fetch: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "chore(sync): 更新资源 [skip ci]"
+          file_pattern: "resources/* batch_report.md"
+          commit_author: "sync-bot <actions@github.com>"
