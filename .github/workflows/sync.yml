@@ -8,7 +8,7 @@ on:
           可选。每行一个「名称|接口链接」，留空则使用脚本内置默认接口(5/0~5/3)。
           例：
             5_0|https://0.12yue.de5.net/5/0
-            5_1|https://0.12yue.de5.net/5/1
+           
         required: false
         type: string
   push:
