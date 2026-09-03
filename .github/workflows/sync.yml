@@ -1,0 +1,79 @@
+name: 资源采集托管（相对→绝对→本地化）
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: |
+          可选：覆盖默认接口。一行一个 "名称|链接"。留空则使用内置的 0~3 接口。
+          内置：
+            0 = https://0.12yue.de5.net/5/0
+            1 = https://0.12yue.de5.net/5/1
+            2 = https://0.12yue.de5.net/5/2
+            3 = https://0.12yue.de5.net/5/3
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 4 * * *"   # 每天 UTC 4:00（北京时间 12:00）自动跑一次
+  push:
+    paths:
+      - "seeds/**"
+      - "scripts/**"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 组装 targets 参数
+        id: prep
+        run: |
+          if [ -n "${{ github.event.inputs.targets }}" ]; then
+            # 把多行 "名称|链接" 转成空格分隔，正确转义
+            ARGS=$(printf '%s\n' "${{ github.event.inputs.targets }}" \
+                   | grep -v '^[[:space:]]*$' \
+                   | sed 's/"/\\"/g' \
+                   | awk '{printf "\"%s\" ", $0}')
+            echo "args=$ARGS" >> $GITHUB_OUTPUT
+          else
+            echo "args=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 运行采集（相对→绝对→本地化）
+        run: |
+          mkdir -p resources
+          CMD="python scripts/rel2abs_localize.py --out resources"
+          if [ -n "${{ steps.prep.outputs.args }}" ]; then
+            CMD="$CMD --targets ${{ steps.prep.outputs.args }}"
+          fi
+          echo "RUN: $CMD"
+          eval $CMD
+
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resources/
+          if git diff --cached --quiet; then
+            echo "无变更，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore(sync): 更新资源快照 [skip ci]"
+          git push
+
+      - name: 上传本次产物（供即时下载）
+        uses: actions/upload-artifact@v4
+        with:
+          name: resources-${{ github.run_number }}
+          path: resources/
+          retention-days: 30
