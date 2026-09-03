@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>player</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+html,body {width:100%;height:100%;background-color:#161823;overflow:hidden;}
+.video {width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.video iframe {width:100%;height:100%;border:none;background:#000;}
+</style>
+</head>
+<body>
+<div class="video" id="playbox"></div>
+<script>
+const getQueryParam = (name) => {
+const params = new URLSearchParams(window.location.search);
+return params.get(name) || '';
+};
+
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('selectstart', (e) => e.preventDefault());
+
+const initPlayer = () => {
+const videoUrl = getQueryParam('url');
+const playbox = document.getElementById('playbox');
+
+if (!videoUrl) {
+playbox.innerHTML = '<div style="color: #fff; text-align: center; padding: 20px;">video url</div>';
+return;
+}
+
+const iframe = document.createElement('iframe');
+iframe.setAttribute('width', '100%');
+iframe.setAttribute('height', '100%');
+iframe.setAttribute('allowtransparency', 'true');
+iframe.setAttribute('allowfullscreen', 'true');
+iframe.setAttribute('scrolling', 'no');
+iframe.setAttribute('src', `https://jiexi.bot.cd/?url=${encodeURIComponent(videoUrl)}`) ;
+
+playbox.appendChild(iframe);
+};
+
+document.addEventListener('DOMContentLoaded', initPlayer);
+</script>
+<script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"24xxHOEHkc4GTdQ3",ck:"24xxHOEHkc4GTdQ3"})</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"6aa4105369cd49b09b0eeb05d279b174","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>

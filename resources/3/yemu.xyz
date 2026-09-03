@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html xml:lang="zh-Hans" lang="zh-Hans">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+	<meta name="applicable-device" content="pc,mobile">
+	<meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <title>十八码 - 苹果CMS模板插件与WEB播放器整合使用经验交流社区</title>
+	<meta name="description" content="十八码是苹果cms模板插件开发下载、苹果cms使用经验交流，dplayer播放器、弹幕播放器、videojs等M3U8播放器和web播放器二次开发整合以及建站前端开发技术交流源码分享的综合社区，欢迎您的来访与我们一起交流学习进步！" />
+	<meta name="keywords" content="十八码,maccms,苹果cms,苹果cms模板,苹果cms插件,web播放器,m3u8播放器,zblog模板插件,dplayer,videojs,弹幕播放器,vip视频解析,建站前端开发,建站源码分享" />
+	<meta property="og:type" content="index"/>
+	<meta property="og:title" content="十八码" />
+	<meta property="og:description" content="十八码是苹果cms模板插件开发下载、苹果cms使用经验交流，dplayer播放器、弹幕播放器、videojs等M3U8播放器和web播放器二次开发整合以及建站前端开发技术交流源码分享的综合社区，欢迎您的来访与我们一起交流学习进步！" />
+	<meta property="og:image" content="/static/logo.png" />
+	<meta property="og:url" content="https://yemu.xyz/" />
+	<script src="https://yemu.xyz/zb_users/theme/hopelee/script/jquery.min-3.6.1.js?v=173290"></script>
+    <script src="https://yemu.xyz/zb_system/script/zblogphp.js?v=173290"></script>
+    <script src="https://yemu.xyz/zb_system/script/c_html_js_add.php?hash=&v=173290"></script>
+    <link rel="stylesheet" href="https://yemu.xyz/zb_users/theme/hopelee/style/libs/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://yemu.xyz/zb_users/theme/hopelee/style/style.css?v=2023-05-04" type="text/css" media="all" as="style">
+	<link rel="stylesheet" href="https://yemu.xyz/zb_users/theme/hopelee/style/mystyle.css" type="text/css" media="all" as="style">
+	<link rel="stylesheet" href="https://yemu.xyz/zb_users/theme/hopelee/style/libs/night.css" type="text/css" media="all" />
+	<link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+	<link rel="alternate" type="application/rss+xml" href="https://yemu.xyz/feed.php" title="十八码" />
+	<!--[if lt IE 9]><script src="https://cdn.staticfile.org/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
+    <script src="https://yemu.xyz/zb_users/plugin/dayuser/style/js/wind.js"></script>
+</head>
+<body class="home home-index">
+	<header class="top-header">
+		<div class="top-bar">
+			<div class="container secnav secnav-b clearfix">
+				<div class="fav-subnav">
+					<div class="top-bar-left pull-left navlogo">
+						<div class="m-top-search"><i class="icon font-search top-search"></i></div>
+						<a href="https://yemu.xyz/" class="logo" title="十八码">
+							<img width="300" height="100" src="/static/logo.png" class="logo-light" id="logo-light" alt="十八码"><img width="300" height="100" src="/static/yelogo.png" class="logo-dark d-none" id="logo-dark" alt="十八码">						</a>
+						<div class="m-top-logo"><i class="nav-bar"><span></span><span></span><span></span></i></div>
+					</div>					
+					<div class="top-nav-left header-nav fl" data-type="index" data-infoid="index">
+						<aside class="mobile_aside mobile_nav">
+														<ul id="nav" class="top-bar-menu nav-pills">
+								<li class="navbar-item "><a href="/" title="十八码首页">首页</a></li><li class="navbar-item menu-item-has-children"><a href="/?cate=1" title="苹果CMS模版插件与使用经验交流">苹果CMS</a><ul class="sub-menu"><li class="navbar-item "><a href="/?cate=6" title="苹果CMS模板">苹果CMS模板</a></li><li class="navbar-item "><a href="/?cate=7" title="苹果CMS插件">苹果CMS插件</a></li><li class="navbar-item "><a href="/?cate=8" title="苹果CMS经验">苹果CMS经验</a></li></ul></li><li class="navbar-item menu-item-has-children"><a href="/?cate=2" title="WEB播放器和M3U8播放器专栏">WEB播放器</a><ul class="sub-menu"><li class="navbar-item "><a href="/?cate=9" title="DPlayer">DPlayer</a></li><li class="navbar-item "><a href="/?cate=10" title="Artplayer">Artplayer</a></li><li class="navbar-item "><a href="/?cate=11" title="CKplayer">CKplayer</a></li><li class="navbar-item "><a href="/category-16.html" title="Muiplayer">Muiplayer</a></li><li class="navbar-item "><a href="/category-17.html" title="Plyr">Plyr</a></li><li class="navbar-item "><a href="/category-18.html" title="西瓜播放器">西瓜播放器</a></li><li class="navbar-item "><a href="/?cate=12" title="Videojs">Videojs</a></li><li class="navbar-item "><a href="/?cate=13" title="Aliplayer">Aliplayer</a></li><li class="navbar-item "><a href="/?cate=14" title="Tcplayer">Tcplayer</a></li><li class="navbar-item "><a href="/?cate=15" title="其它播放器">其它播放器</a></li><li class="navbar-item "><a href="/category-23.html" title="播放器知识">播放器知识</a></li></ul></li><li class="navbar-item menu-item-has-children"><a href="/?cate=4" title="网站建设与前端开发专栏">建站开发</a><ul class="sub-menu"><li class="navbar-item "><a href="/?cate=19" title="JavaScript">JavaScript</a></li><li class="navbar-item "><a href="/?cate=20" title="Html/Css">Html/Css</a></li><li class="navbar-item "><a href="/?cate=21" title="PHP知识">PHP知识</a></li><li class="navbar-item "><a href="/?cate=22" title="服务器端">服务器端</a></li></ul></li><li class="navbar-item "><a href="/?cate=3" title="Zblog模版插件与使用经验交流">Zblog</a></li><li class="navbar-item "><a href="/?cate=5" title="各种精品资源分享与交流">资源分享</a></li><li class="navbar-item "><a href="/?id=2" title="给我们留言交流一下吧">留言</a></li>							</ul>
+													</aside>
+						<div id="mask"></div>
+					</div>
+					<div class="search-warp clearfix">
+						<div class="search_top">
+							<div class="search-icon"></div>
+							<div class="search-box">
+								<form name="search" method="post" action="https://yemu.xyz/zb_system/cmd.php?act=search">
+									<input class="search-input" placeholder="请输入关键字" type="text" name="q">
+									<button class="showhide-search" type="submit">Search</button>
+									<span class="s-icon"></span>
+								</form>
+								<div class="nav-search-hot">								<a href="https://yemu.xyz/post/16.html" title="苹果cms老王在maccms.com官网更新的最后版本-maccms10-2019.03.06" target="_blank"><span class="s-drop-n num1">1</span><span class="s-drop-t">苹果cms老王在maccms.com官网更新的最后版本-maccms10-2019.03.06</span><span class="s-drop-v">2.97 W</span></a><a href="https://yemu.xyz/post/6.html" title="苹果cms-v10最新2020.1000.1066版本模板标签大全" target="_blank"><span class="s-drop-n num2">2</span><span class="s-drop-t">苹果cms-v10最新2020.1000.1066版本模板标签大全</span><span class="s-drop-v">2.99 W</span></a><a href="https://yemu.xyz/post/14.html" title="Dplayer - 一款非常优秀的开源弹幕H5播放器" target="_blank"><span class="s-drop-n num3">3</span><span class="s-drop-t">Dplayer - 一款非常优秀的开源弹幕H5播放器</span><span class="s-drop-v">9.75 W</span></a><a href="https://yemu.xyz/post/15.html" title="超酷的开源H5视频播放器CKplayer" target="_blank"><span class="s-drop-n num4">4</span><span class="s-drop-t">超酷的开源H5视频播放器CKplayer</span><span class="s-drop-v">5.73 W</span></a><a href="https://yemu.xyz/post/28.html" title="Plyr - 一个轻量级，UI好看的H5 Web播放器" target="_blank"><span class="s-drop-n num5">5</span><span class="s-drop-t">Plyr - 一个轻量级，UI好看的H5 Web播放器</span><span class="s-drop-v">5.56 W</span></a><a href="https://yemu.xyz/post/11.html" title="苹果cms内置的ajax接口实现页面瀑布流加载效果" target="_blank"><span class="s-drop-n num6">6</span><span class="s-drop-t">苹果cms内置的ajax接口实现页面瀑布流加载效果</span><span class="s-drop-v">2.68 W</span></a>								</div>							</div>
+						</div>
+						<a class="at-night top-night" title="夜间模式" href="javascript:switchNightMode()" target="_self"></a>
+						<div class="text-user-r">
+							    <a target="_self" class="t-btn r-btn-ht" title="HI，您好！" href="/?Register">注册</a><a target="_self" class="t-btn l-btn-ht" title="登录账户" href="/?Login">登录</a>    						</div>					</div>
+				</div>
+			</div>
+			<div id="percentageCounter"></div>
+		</div>
+	</header><main class="main-content container clearfix">
+	<div class="row">
+		<div class="main fl">						<div class="guide-box">
+				<div class="guide-title"><h3>精选导读</h3></div>
+				<div class="guide-list">				
+					<article class="guide-inner top-num0">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-7.html">苹果CMS插件</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2024-05-19</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/112.html">苹果cms插件之整合超强划屏H5播放器Artplayer，投屏、自动下一集、记忆播放、弹幕、画中画</a></h5>
+                            <p>苹果cms插件简介苹果cms插件之整合超强划屏H5播放器Artplayer特色功...</p>
+						</div>
+					</article>				
+					<article class="guide-inner top-num1">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-9.html">DPlayer</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2023-05-24</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/14.html">Dplayer - 一款非常优秀的开源弹幕H5播放器</a></h5>
+                            <p>DPlayer是一个开源的HTML5弹幕视频播放器，基于JavaScript编写...</p>
+						</div>
+					</article>				
+					<article class="guide-inner top-num2">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-7.html">苹果CMS插件</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2024-05-17</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/106.html">苹果cms插件之整合超强触屏划屏H5播放器Muiplayer，播完自动下一集带记忆播放功能</a></h5>
+                            <p>苹果cms插件简介苹果cms插件之整合超强触屏划屏H5播放器Muiplayer特...</p>
+						</div>
+					</article>				
+					<article class="guide-inner top-num3">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-11.html">CKplayer</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2023-05-25</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/15.html">超酷的开源H5视频播放器CKplayer</a></h5>
+                            <p>CKplayer简介CKplayer是一款超酷的H5视频播放器，基于javasc...</p>
+						</div>
+					</article>				
+					<article class="guide-inner top-num4">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-17.html">Plyr</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2023-05-31</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/28.html">Plyr - 一个轻量级，UI好看的H5 Web播放器</a></h5>
+                            <p>Plyr播放器简介Plyr 是一个简单、方便、可自定义的H5播放器，使用原生 J...</p>
+						</div>
+					</article>				
+					<article class="guide-inner top-num5">
+						<div class="guide-inner-info">
+							<h4 class="g-i-top">
+								<span class="g-i-cate"><a href="https://yemu.xyz/category-6.html">苹果CMS模板</a></span>
+								<span class="g-i-time"><i class="icon font-time"></i>2024-05-06</span>
+							</h4>
+							<h5><a href="https://yemu.xyz/post/55.html">苹果cmsv10仿含羞草模版，自适应手机端，包含明星文章和专题模块</a></h5>
+                            <p>本源码为苹果CMSV10二次开发，并非单独模板，细节展示可查看演示站，该程序二次...</p>
+						</div>
+					</article>				</div>
+            </div>						<nav class="main-navigation">
+				<ul class="menu-nav-inline">
+				<li class="menu-item active"><a data-post href="/">最新文章</a></li>
+				<li class="menu-item"><a data-post href="/?cate=1"> 苹果cms</a></li><li class="menu-item"><a data-post href="/?cate=2"> Web播放器</a></li>				</ul>
+			</nav>			<div class="side-hot auto-side">
+				<div class="msg-alert">
+					<div class="loading ball-pulse"><div></div><div></div><div></div><span>加载中⋅⋅⋅</span></div>
+				</div>
+				<div id="pjaxmain"><div class="home-main auto-main list-left"><!--页面主体信息-->
+																						<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list1">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/157.html" title="Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://yemu.xyz/zb_users/upload/2025/01/202501221737478533367902.jpg"  alt="Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私" title="详细阅读：Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私">
+			</a>
+			<span class="item-img-cate">资源分享</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私" href="https://yemu.xyz/post/157.html"><span class="badge arc_v4">热文</span>Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>Matomo‌是一个开源的网络和移动分析平台，旨在提供强大的网络分析和转换优化功能。它被重新定义为一体化网络分析平台，具有许多高级功能，如热点图、会话记录、A/B测试、漏斗分析、目标设置、表格分析等‌。Matomo还...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2025-01-21 23:24:18" datetime="2025-01-21 23:24:18"><i class="icon font-time"></i>2025-01-21</time>
+				<span class="meta-viewnums" title="26820 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.68 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/157.html#comments"><span class="separator"></span><i class="icon font-comment"></i>2 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list2">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/156.html" title="宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="/zb_users/upload/2024/05/202405171715882767255025.jpg"  alt="宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法" title="详细阅读：宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法">
+			</a>
+			<span class="item-img-cate">服务器端</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法" href="https://yemu.xyz/post/156.html"><span class="badge arc_v4">热文</span>宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>在服务器运维时经常会遇到恶意IP地址访问服务器，某些蜘蛛爬虫频繁抓取站点内容等原因导致服务器压力增大和带宽拥挤等等问题，出于安全考虑或资源限制，有时需要禁止特定IP段对服务器的访问，这些通常涉及到配置防火墙规则或使用...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2025-01-19 18:39:25" datetime="2025-01-19 18:39:25"><i class="icon font-time"></i>2025-01-19</time>
+				<span class="meta-viewnums" title="16921 阅读"><span class="separator"></span><i class="icon font-eye"></i>1.69 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/156.html#comments"><span class="separator"></span><i class="icon font-comment"></i>0 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list3">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/155.html" title="苹果CMS V10 - 二开仿某豆网站粉红色精致模板"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://yemu.xyz/zb_users/upload/2025/01/202501151736924613147877.jpg"  alt="苹果CMS V10 - 二开仿某豆网站粉红色精致模板" title="详细阅读：苹果CMS V10 - 二开仿某豆网站粉红色精致模板">
+			</a>
+			<span class="item-img-cate">苹果CMS模板</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="苹果CMS V10 - 二开仿某豆网站粉红色精致模板" href="https://yemu.xyz/post/155.html"><span class="badge arc_v4">热文</span>苹果CMS V10 - 二开仿某豆网站粉红色精致模板</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>模板截图模板简介这款苹果CMSV10粉红色精致模板是网络上现在流传很火的苹果cmsV10二开仿某豆网站模板，网络上价值600多。使用V10 1075版本支持站群，支持数据库挂马检测等。测试环境环境需要PHP7.3，安...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2025-01-15 14:55:51" datetime="2025-01-15 14:55:51"><i class="icon font-time"></i>2025-01-15</time>
+				<span class="meta-viewnums" title="16842 阅读"><span class="separator"></span><i class="icon font-eye"></i>1.68 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/155.html#comments"><span class="separator"></span><i class="icon font-comment"></i>48 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list4">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/154.html" title="苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="/zb_users/upload/2024/05/202405171715916072620023.jpg"  alt="苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作" title="详细阅读：苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作">
+			</a>
+			<span class="item-img-cate">苹果CMS经验</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作" href="https://yemu.xyz/post/154.html"><span class="badge arc_v4">热文</span>苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>定时任务目前内置了采集资源、生成静态2个执行操作1，采集资源库执行文件：选择采集资源库collect附加参数：可从联盟资源库，自定义资源列表中获取（在采集今日，采集本周，采集全部右键复制链接）截取参数部分即可。例如：...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-07-04 09:10:24" datetime="2024-07-04 09:10:24"><i class="icon font-time"></i>2024-07-04</time>
+				<span class="meta-viewnums" title="28721 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.87 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/154.html#comments"><span class="separator"></span><i class="icon font-comment"></i>0 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list5">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/153.html" title="苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://telegraph-image-f37.pages.dev/file/ae9a49129b3cbdbc92de5.jpg"  alt="苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）" title="详细阅读：苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）">
+			</a>
+			<span class="item-img-cate">苹果CMS模板</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）" href="https://yemu.xyz/post/153.html"><span class="badge arc_v4">热文</span>苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>模板简介苹果CMS V10一款经典漂亮UI仿芒果TV听书电脑和手机双端模板，本站（十八码-www.18ma.cn）改版成影视站双端模板并修复了：修复全站图片lazyload懒加载修复电脑端右上角登录弹窗错误、修复手机...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-11 16:03:09" datetime="2024-06-11 16:03:09"><i class="icon font-time"></i>2024-06-11</time>
+				<span class="meta-viewnums" title="34647 阅读"><span class="separator"></span><i class="icon font-eye"></i>3.46 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/153.html#comments"><span class="separator"></span><i class="icon font-comment"></i>139 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list6">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/152.html" title="苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="/zb_users/upload/2024/05/202405171715916072620023.jpg"  alt="苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化" title="详细阅读：苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化">
+			</a>
+			<span class="item-img-cate">苹果CMS经验</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化" href="https://yemu.xyz/post/152.html"><span class="badge arc_v4">热文</span>苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>苹果CMS建站后对主页、分类页、筛选页、详情页、播放页、搜索页等待页面都需要做简单的SEO优化，大部分苹果CMS模板都有这部分优化，记录一下苹果CMS模板中比较常见的title标题、keywords关键词、descr...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-10 11:55:09" datetime="2024-06-10 11:55:09"><i class="icon font-time"></i>2024-06-10</time>
+				<span class="meta-viewnums" title="27944 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.79 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/152.html#comments"><span class="separator"></span><i class="icon font-comment"></i>0 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list7">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/151.html" title="CSS基础 - 实现隐藏滚动条并可以滚动内容效果"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="/zb_users/upload/2024/05/202405171715882247947401.jpg"  alt="CSS基础 - 实现隐藏滚动条并可以滚动内容效果" title="详细阅读：CSS基础 - 实现隐藏滚动条并可以滚动内容效果">
+			</a>
+			<span class="item-img-cate">Html/Css</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="CSS基础 - 实现隐藏滚动条并可以滚动内容效果" href="https://yemu.xyz/post/151.html"><span class="badge arc_v4">热文</span>CSS基础 - 实现隐藏滚动条并可以滚动内容效果</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>我们经常在前端开发中遇到这种情况，特别是在H5移动端页面开发时，经常需要隐藏滚动条的同时还需要支持滚动，今天就来聊聊CSS实现这个功能，我已经在很多地方使用了，下面一起看看这三种方法。第一种方法：要在CSS中实现元素...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-09 19:35:17" datetime="2024-06-09 19:35:17"><i class="icon font-time"></i>2024-06-09</time>
+				<span class="meta-viewnums" title="25233 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.52 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/151.html#comments"><span class="separator"></span><i class="icon font-comment"></i>0 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list8">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/150.html" title="播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://yemu.xyz/zb_users/theme/hopelee/style/noimg/3.jpg"  alt="播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频" title="详细阅读：播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频">
+			</a>
+			<span class="item-img-cate">播放器知识</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频" href="https://yemu.xyz/post/150.html"><span class="badge arc_v4">热文</span>播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>常见网络视频格式常见网络视频格式主要指的是那些适合在网络上传输和播放的视频格式，这些格式通常具有较小的文件大小和较快的加载速度，以便用户可以快速观看视频属性。以下是一些常见的网络视频格式及其特点：M3U8是一种视频格...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-06 11:28:18" datetime="2024-06-06 11:28:18"><i class="icon font-time"></i>2024-06-06</time>
+				<span class="meta-viewnums" title="23723 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.37 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/150.html#comments"><span class="separator"></span><i class="icon font-comment"></i>21 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list9">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/149.html" title="苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://telegraph-image-f37.pages.dev/file/0bbb95a6e4a8dbae7896e.jpg"  alt="苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板" title="详细阅读：苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板">
+			</a>
+			<span class="item-img-cate">苹果CMS模板</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板" href="https://yemu.xyz/post/149.html"><span class="badge arc_v4">热文</span>苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>模板简介仿西瓜影院终端自适应轻量SEO影视模板是一款非常轻量化的模板，优点是调用文件少加载速度快且整体结构利于SEO收录。测试环境苹果CMS V10Apache 2.4PHP 5.6Mysql 5.5模板安装1.将下...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-06 10:39:19" datetime="2024-06-06 10:39:19"><i class="icon font-time"></i>2024-06-06</time>
+				<span class="meta-viewnums" title="23842 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.38 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/149.html#comments"><span class="separator"></span><i class="icon font-comment"></i>53 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+																											<article class="post-list blockimg picsrcd auto-list wow fadeInDown" id="list10">
+	<div class="entry-container">
+		<figure class="block-image feaimg">
+			<a class="block-fea" href="https://yemu.xyz/post/148.html" title="M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置"><img class="lazy" src="/zb_users/theme/hopelee/style/images/lazyloading.gif"  data-original="https://telegraph-image-f37.pages.dev/file/14d6eb712efd4801e0923.jpg"  alt="M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置" title="详细阅读：M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置">
+			</a>
+			<span class="item-img-cate">播放器知识</span>
+		</figure>
+		<header class="entry-header">
+			<h3><a title="M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置" href="https://yemu.xyz/post/148.html"><span class="badge arc_v4">热文</span>M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置</a></h3>
+		</header>
+		<div class="entry-summary ss"><p>M3U8视频什么是M3U8视频？m3u8文件格式最初是由苹果公司提出，用于存储基于HTTP Live Streaming（HLS）协议的播放列表。HLS是一种用于实时流传输的协议，旨在提供更流畅的视频体验。m3u8文...</p></div>
+		<div class="entry-meta-items">
+			<div class="entry-meta fea-meta">
+				<time title="2024-06-05 18:59:29" datetime="2024-06-05 18:59:29"><i class="icon font-time"></i>2024-06-05</time>
+				<span class="meta-viewnums" title="25260 阅读"><span class="separator"></span><i class="icon font-eye"></i>2.53 W 阅读</span>
+				<a class="meta-viewnums" href="https://yemu.xyz/post/148.html#comments"><span class="separator"></span><i class="icon font-comment"></i>22 评论</a>			</div>
+			<div class="entry-meta-author"><a class="meta-author-url" href="https://yemu.xyz/author-1.html"><i class="icon icon font-guanfangbanben"></i>admin</a></div>
+		</div>
+		<div class="l-line"></div>
+	</div></article>
+														</div>
+								<footer class="pagination wow fadeInDown">
+					<ul><li class="active"><span>1</span></li>
+<li><a href="https://yemu.xyz/page_2.html" title="第2页" >2</a></li>
+<li><a href="https://yemu.xyz/page_3.html" title="第3页" >3</a></li>
+<li><a href="https://yemu.xyz/page_4.html" title="第4页" >4</a></li>
+<li><a href="https://yemu.xyz/page_5.html" title="第5页" >5</a></li>
+<li><a href="https://yemu.xyz/page_6.html" title="第6页" >6</a></li>
+<li><a href="https://yemu.xyz/page_7.html" title="第7页" >7</a></li>
+<li><a href="https://yemu.xyz/page_8.html" title="第8页" >8</a></li>
+<li><a href="https://yemu.xyz/page_9.html" title="第9页" >9</a></li>
+<li><a href="https://yemu.xyz/page_10.html" title="第10页" >10</a></li>
+<li><a href="https://yemu.xyz/page_2.html" title="下一页" class="c-nav next ease a1">下一页</a></li>
+<li><a href="https://yemu.xyz/page_15.html" class="c-nav ease moye" title="末页">末页 </a></li>
+<li><span>共 15 页</span></li>
+</ul>
+					<div id="loadmore" class="load-more-wrap loadmore"><a class="load-more" href="https://yemu.xyz/page_2.html" id="post_over">点击查看更多</a></div>				</footer></div>
+			</div>
+		</div>
+		<div class="side fr mside">
+						<section class="widget_avatar">	
+                <div class="widget_user" style="background-image: url(/zb_users/theme/hopelee/style/images/aside-author-bg.jpg);">					<div class="user-bgif"><img title="admin" src="//dn-qiniu-avatar.qbox.me/avatar/b70a46f09148634901fa6e442fca8201.png?s=60&amp;d=mm&amp;r=G" alt="admin" height="80" width="80">
+					<div class="name"><h3><a href="https://yemu.xyz/author-1.html" rel="nofollow" title="QQ联系我">admin<span class="autlv aut-1 vs-level">V</span></a></h3><p>设置侧栏作者、背景及相关信息！</p></div></div>
+				</div>
+				<div class="webinfo">
+                    <div class="item">
+                        <span class="num" title="文章总数：156">156</span>
+                        <span>文章数</span>
+                    </div>
+                    <div class="item">
+                        <span class="num" title="评论总数：3232">3232</span>
+                        <span>评论数</span>
+                    </div>
+					<div class="item">
+                        <span class="num" title="浏览总数：1256622">1256622</span>
+                        <span>浏览数</span>
+                    </div>
+                </div>
+            </section>			
+<section class="widget wow fadeInDown" id="side_countdown">
+<h3 class="widget-title">似水流年</h3>
+<ul class="widget-box side_countdown"><div class="item"id="dayProgress"><div class="title">今日已经过去<span></span>小时</div><div class="progress"><div class="progress-bar"><div class="progress-inner progress-inner-1"></div></div><div class="progress-percentage"></div></div></div><div class="item"id="weekProgress"><div class="title">这周已经过去<span></span>天</div><div class="progress"><div class="progress-bar"><div class="progress-inner progress-inner-2"></div></div><div class="progress-percentage"></div></div></div><div class="item"id="monthProgress"><div class="title">本月已经过去<span></span>天</div><div class="progress"><div class="progress-bar"><div class="progress-inner progress-inner-3"></div></div><div class="progress-percentage"></div></div></div><div class="item"id="yearProgress"><div class="title">今年已经过去<span></span>个月</div><div class="progress"><div class="progress-bar"><div class="progress-inner progress-inner-4"></div></div><div class="progress-percentage"></div></div></div></ul>
+</section><section class="widget wow fadeInDown" id="bdhot">
+<h3 class="widget-title">百度热搜</h3>
+<ul class="widget-box bdhot"><li><span class="top-num">1</span><span class="r-txt  hot-tag_1G080">  </span><a href="https://www.baidu.com/s?wd=%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%B8%BB%E5%B8%AD%E7%9A%84%E2%80%9C%E6%AF%94%E4%BB%80%E5%87%AF%E5%85%8B%E6%97%B6%E9%97%B4%E2%80%9D&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  习近平主席的“比什凯克时间” " target="_blank">  习近平主席的“比什凯克时间” </a></li><li><span class="top-num">2</span><span class="r-txt c-text-hot_3ZhI9 hot-tag_1G080"> 热 </span><a href="https://www.baidu.com/s?wd=%E5%B9%BF%E5%B7%9E%E5%8F%96%E6%B6%88%E6%A0%A1%E6%9C%8D%E7%BB%9F%E4%B8%80%E8%AE%A2%E8%B4%AD&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  广州取消校服统一订购 " target="_blank">  广州取消校服统一订购 </a></li><li><span class="top-num">3</span><span class="r-txt c-text-hot_3ZhI9 hot-tag_1G080"> 热 </span><a href="https://www.baidu.com/s?wd=%E4%B8%96%E7%95%8C%E5%B7%B2%E8%BF%9B%E5%85%A5%E6%9E%81%E7%AB%AF%E5%A4%A9%E6%B0%94%E5%8D%B1%E9%99%A9%E5%8C%BA&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  世界已进入极端天气危险区 " target="_blank">  世界已进入极端天气危险区 </a></li><li><span class="top-num">4</span><span class="r-txt  hot-tag_1G080">  </span><a href="https://www.baidu.com/s?wd=%E6%96%B0%E5%AD%A6%E6%9C%9F%E5%BB%BA%E8%AE%AE%E5%AE%B6%E9%95%BF%E6%AF%8F%E5%A4%A9%E6%8A%93%E5%A5%BD%E8%BF%993%E4%BB%B6%E5%B0%8F%E4%BA%8B&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  新学期建议家长每天抓好这3件小事 " target="_blank">  新学期建议家长每天抓好这3件小事 </a></li><li><span class="top-num">5</span><span class="r-txt c-text-hot_3ZhI9 hot-tag_1G080"> 热 </span><a href="https://www.baidu.com/s?wd=%E6%89%8B%E6%9C%BA%E9%9B%86%E4%BD%93%E6%B6%A8%E4%BB%B7+%E5%90%93%E8%B7%91%E4%BA%86%E4%B9%B0%E6%89%8B%E6%9C%BA%E7%9A%84%E4%BA%BA&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  手机集体涨价 吓跑了买手机的人 " target="_blank">  手机集体涨价 吓跑了买手机的人 </a></li><li><span class="top-num">6</span><span class="r-txt  hot-tag_1G080">  </span><a href="https://www.baidu.com/s?wd=%E6%B5%81%E6%84%9F%E7%96%AB%E8%8B%97%E5%B8%82%E5%9C%BA%E5%8F%98%E5%A4%A9%E4%BA%86&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  流感疫苗市场变天了 " target="_blank">  流感疫苗市场变天了 </a></li><li><span class="top-num">7</span><span class="r-txt c-text-hot_3ZhI9 hot-tag_1G080"> 热 </span><a href="https://www.baidu.com/s?wd=%E4%B8%AD%E5%9B%BD%E6%88%BF%E5%AD%90%E8%BF%8E%E6%9D%A5%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%88%86%E6%B0%B4%E5%B2%AD&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  中国房子迎来真正的分水岭 " target="_blank">  中国房子迎来真正的分水岭 </a></li><li><span class="top-num">8</span><span class="r-txt c-text-hot_3ZhI9 hot-tag_1G080"> 热 </span><a href="https://www.baidu.com/s?wd=%E3%80%8A%E5%90%8E%E8%A5%BF%E6%B8%B8%E8%AE%B0%E3%80%8B%E6%AF%8F%E9%9B%86%E6%88%90%E6%9C%AC%E4%BB%852-3%E4%B8%87&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  《后西游记》每集成本仅2-3万 " target="_blank">  《后西游记》每集成本仅2-3万 </a></li><li><span class="top-num">9</span><span class="r-txt  hot-tag_1G080">  </span><a href="https://www.baidu.com/s?wd=%E7%94%B7%E7%AB%A5%E9%95%BF%E6%9C%9F%E5%90%83%E5%89%A9%E9%A5%AD%E4%B8%AD%E6%AF%92+%E5%AE%B6%E9%95%BF%E4%BB%A5%E4%B8%BA%E6%B0%94%E8%89%B2%E5%B7%AE&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  男童长期吃剩饭中毒 家长以为气色差 " target="_blank">  男童长期吃剩饭中毒 家长以为气色差 </a></li><li><span class="top-num">10</span><span class="r-txt  hot-tag_1G080">  </span><a href="https://www.baidu.com/s?wd=%E2%80%9C%E7%B2%A5%E9%A5%BC%E4%BC%A6%E2%80%9D%E9%97%A8%E5%BA%97%E5%85%A8%E9%83%A8%E5%85%B3%E9%97%AD&amp;sa=fyb_news&amp;rsv_dl=fyb_news" title="  “粥饼伦”门店全部关闭 " target="_blank">  “粥饼伦”门店全部关闭 </a></li></ul>
+</section><section class="widget wow fadeInDown" id="divPrevious">
+<h3 class="widget-title">最近发表</h3>
+<ul class="widget-box divPrevious"><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/157.html" title="点击阅读Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私">Matomo - 可自己搭建部署的私有化网站统计平台，完全掌控网站数据安全和隐私</a></div>
+		<div class="side-new-time"><em>资源分享</em><span class="spot"></span>2025月01月21日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/156.html" title="点击阅读宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法">宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法</a></div>
+		<div class="side-new-time"><em>服务器端</em><span class="spot"></span>2025月01月19日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/155.html" title="点击阅读苹果CMS V10 - 二开仿某豆网站粉红色精致模板">苹果CMS V10 - 二开仿某豆网站粉红色精致模板</a></div>
+		<div class="side-new-time"><em>苹果CMS模板</em><span class="spot"></span>2025月01月15日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/154.html" title="点击阅读苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作">苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作</a></div>
+		<div class="side-new-time"><em>苹果CMS经验</em><span class="spot"></span>2024月07月04日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/153.html" title="点击阅读苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）">苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）</a></div>
+		<div class="side-new-time"><em>苹果CMS模板</em><span class="spot"></span>2024月06月11日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/152.html" title="点击阅读苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化">苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化</a></div>
+		<div class="side-new-time"><em>苹果CMS经验</em><span class="spot"></span>2024月06月10日</div>
+	</div>
+</div><div class="side_new">
+	<div class="side_new_dot"></div>
+	<div class="side_new_inner">
+		<div class="side-new-title"><a href="https://yemu.xyz/post/151.html" title="点击阅读CSS基础 - 实现隐藏滚动条并可以滚动内容效果">CSS基础 - 实现隐藏滚动条并可以滚动内容效果</a></div>
+		<div class="side-new-time"><em>Html/Css</em><span class="spot"></span>2024月06月09日</div>
+	</div>
+</div></ul>
+</section><section class="widget wow fadeInDown" id="divCatalog">
+<h3 class="widget-title">网站分类</h3>
+<ul class="widget-box divCatalog"><li><a title="苹果CMS" href="https://yemu.xyz/category-1.html">苹果CMS</a></li>
+<li><a title="苹果CMS模板" href="https://yemu.xyz/category-6.html">苹果CMS模板</a></li>
+<li><a title="苹果CMS插件" href="https://yemu.xyz/category-7.html">苹果CMS插件</a></li>
+<li><a title="苹果CMS经验" href="https://yemu.xyz/category-8.html">苹果CMS经验</a></li>
+<li><a title="WEB播放器" href="https://yemu.xyz/category-2.html">WEB播放器</a></li>
+<li><a title="DPlayer" href="https://yemu.xyz/category-9.html">DPlayer</a></li>
+<li><a title="Artplayer" href="https://yemu.xyz/category-10.html">Artplayer</a></li>
+<li><a title="CKplayer" href="https://yemu.xyz/category-11.html">CKplayer</a></li>
+<li><a title="Videojs" href="https://yemu.xyz/category-12.html">Videojs</a></li>
+<li><a title="Muiplayer" href="https://yemu.xyz/category-16.html">Muiplayer</a></li>
+<li><a title="Plyr" href="https://yemu.xyz/category-17.html">Plyr</a></li>
+<li><a title="Aliplayer" href="https://yemu.xyz/category-13.html">Aliplayer</a></li>
+<li><a title="Tcplayer" href="https://yemu.xyz/category-14.html">Tcplayer</a></li>
+<li><a title="西瓜播放器" href="https://yemu.xyz/category-18.html">西瓜播放器</a></li>
+<li><a title="其它播放器" href="https://yemu.xyz/category-15.html">其它播放器</a></li>
+<li><a title="播放器知识" href="https://yemu.xyz/category-23.html">播放器知识</a></li>
+<li><a title="Zblog" href="https://yemu.xyz/category-3.html">Zblog</a></li>
+<li><a title="建站开发" href="https://yemu.xyz/category-4.html">建站开发</a></li>
+<li><a title="JavaScript" href="https://yemu.xyz/category-19.html">JavaScript</a></li>
+<li><a title="Html/Css" href="https://yemu.xyz/category-20.html">Html/Css</a></li>
+<li><a title="PHP知识" href="https://yemu.xyz/category-21.html">PHP知识</a></li>
+<li><a title="服务器端" href="https://yemu.xyz/category-22.html">服务器端</a></li>
+<li><a title="资源分享" href="https://yemu.xyz/category-5.html">资源分享</a></li>
+</ul>
+</section><section class="widget wow fadeInDown" id="divComments">
+<h3 class="widget-title">最新留言</h3>
+<ul class="widget-box divComments"><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/46.html#cmt3259" title="用户昵称：zaijieshang"><img alt="用户昵称：zaijieshang" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/46.html#cmt3259" target="_blank" title="留言文章：苹果CMS插件之整合带记忆播放功能的CKplayer X3版本超酷H5播放器">感谢分享，学习一下</a></div>
+		<div class="newComments-mary" title="留言时间：2026年09月03日 14:42:41"><em title="用户昵称：zaijieshang">zaijieshang</em><span class="spot"></span>2026-09-03</div>
+	</div>
+</li><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/15.html#cmt3258" title="用户昵称：zaijieshang"><img alt="用户昵称：zaijieshang" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/15.html#cmt3258" target="_blank" title="留言文章：超酷的开源H5视频播放器CKplayer">文章不错,写的很好！</a></div>
+		<div class="newComments-mary" title="留言时间：2026年09月03日 14:38:40"><em title="用户昵称：zaijieshang">zaijieshang</em><span class="spot"></span>2026-09-03</div>
+	</div>
+</li><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/112.html#cmt3257" title="用户昵称：letme"><img alt="用户昵称：letme" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/112.html#cmt3257" target="_blank" title="留言文章：苹果cms插件之整合超强划屏H5播放器Artplayer，投屏、自动下一集、记忆播放、弹幕、画中画">感谢分享</a></div>
+		<div class="newComments-mary" title="留言时间：2026年09月01日 02:37:36"><em title="用户昵称：letme">letme</em><span class="spot"></span>2026-09-01</div>
+	</div>
+</li><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/155.html#cmt3256" title="用户昵称：letme"><img alt="用户昵称：letme" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/155.html#cmt3256" target="_blank" title="留言文章：苹果CMS V10 - 二开仿某豆网站粉红色精致模板">感谢分享</a></div>
+		<div class="newComments-mary" title="留言时间：2026年09月01日 02:35:43"><em title="用户昵称：letme">letme</em><span class="spot"></span>2026-09-01</div>
+	</div>
+</li><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/112.html#cmt3255" title="用户昵称：3494537540"><img alt="用户昵称：3494537540" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/112.html#cmt3255" target="_blank" title="留言文章：苹果cms插件之整合超强划屏H5播放器Artplayer，投屏、自动下一集、记忆播放、弹幕、画中画">可以可以</a></div>
+		<div class="newComments-mary" title="留言时间：2026年08月29日 23:52:50"><em title="用户昵称：3494537540">3494537540</em><span class="spot"></span>2026-08-29</div>
+	</div>
+</li><li class="side-new-comments">
+	<strong></strong><b></b>
+	<div class="newComments-info">
+		<div class="newComments-deanxz"><a href="https://yemu.xyz/post/107.html#cmt3253" title="用户昵称：zaijieshang"><img alt="用户昵称：zaijieshang" src="//dn-qiniu-avatar.qbox.me/avatar/d41d8cd98f00b204e9800998ecf8427e.png?s=60&d=mm&r=G"></a></div>
+		<div class="newComments-text"><a href="https://yemu.xyz/post/107.html#cmt3253" target="_blank" title="留言文章：苹果cms插件之整合西瓜播放器XGplayer，带触控划屏、自动下一集、记忆播放、倍速、画中画等功能">是事实</a></div>
+		<div class="newComments-mary" title="留言时间：2026年08月29日 18:24:25"><em title="用户昵称：zaijieshang">zaijieshang</em><span class="spot"></span>2026-08-29</div>
+	</div>
+</li></ul>
+</section><section class="widget wow fadeInDown" id="divTags">
+<h3 class="widget-title">标签列表</h3>
+<ul class="widget-box divTags"><li><a title="JQuery" href="https://yemu.xyz/tags-1.html">JQuery<span class="tag-count"> (28)</span></a></li>
+<li><a title="宝塔面板" href="https://yemu.xyz/tags-2.html">宝塔面板<span class="tag-count"> (11)</span></a></li>
+<li><a title="CSS" href="https://yemu.xyz/tags-3.html">CSS<span class="tag-count"> (7)</span></a></li>
+<li><a title="苹果cms" href="https://yemu.xyz/tags-5.html">苹果cms<span class="tag-count"> (63)</span></a></li>
+<li><a title="maccms" href="https://yemu.xyz/tags-6.html">maccms<span class="tag-count"> (62)</span></a></li>
+<li><a title="Dplayer" href="https://yemu.xyz/tags-9.html">Dplayer<span class="tag-count"> (8)</span></a></li>
+<li><a title="CKplayer" href="https://yemu.xyz/tags-10.html">CKplayer<span class="tag-count"> (9)</span></a></li>
+<li><a title="弹幕播放器" href="https://yemu.xyz/tags-13.html">弹幕播放器<span class="tag-count"> (40)</span></a></li>
+<li><a title="苹果cms模版" href="https://yemu.xyz/tags-16.html">苹果cms模版<span class="tag-count"> (34)</span></a></li>
+<li><a title="Videojs" href="https://yemu.xyz/tags-18.html">Videojs<span class="tag-count"> (7)</span></a></li>
+<li><a title="苹果cms插件" href="https://yemu.xyz/tags-21.html">苹果cms插件<span class="tag-count"> (16)</span></a></li>
+<li><a title="JavaScript" href="https://yemu.xyz/tags-22.html">JavaScript<span class="tag-count"> (17)</span></a></li>
+<li><a title="Cookie" href="https://yemu.xyz/tags-23.html">Cookie<span class="tag-count"> (10)</span></a></li>
+<li><a title="H5播放器" href="https://yemu.xyz/tags-25.html">H5播放器<span class="tag-count"> (60)</span></a></li>
+<li><a title="自定义皮肤" href="https://yemu.xyz/tags-27.html">自定义皮肤<span class="tag-count"> (7)</span></a></li>
+<li><a title="web播放器" href="https://yemu.xyz/tags-34.html">web播放器<span class="tag-count"> (57)</span></a></li>
+<li><a title="Artplayer" href="https://yemu.xyz/tags-38.html">Artplayer<span class="tag-count"> (8)</span></a></li>
+<li><a title="HTML5" href="https://yemu.xyz/tags-39.html">HTML5<span class="tag-count"> (13)</span></a></li>
+<li><a title="教程" href="https://yemu.xyz/tags-44.html">教程<span class="tag-count"> (57)</span></a></li>
+<li><a title="HTML" href="https://yemu.xyz/tags-46.html">HTML<span class="tag-count"> (9)</span></a></li>
+<li><a title="自适应" href="https://yemu.xyz/tags-52.html">自适应<span class="tag-count"> (21)</span></a></li>
+<li><a title="广告" href="https://yemu.xyz/tags-57.html">广告<span class="tag-count"> (16)</span></a></li>
+<li><a title="弹幕" href="https://yemu.xyz/tags-58.html">弹幕<span class="tag-count"> (8)</span></a></li>
+<li><a title="记忆播放" href="https://yemu.xyz/tags-65.html">记忆播放<span class="tag-count"> (9)</span></a></li>
+<li><a title="苹果cms模板" href="https://yemu.xyz/tags-88.html">苹果cms模板<span class="tag-count"> (17)</span></a></li>
+</ul>
+</section>		</div>
+	</div>
+	<!--仅在首页显示-->
+			<div class="line-big">		<div class="line-box wow fadeInDown">
+			<div class="side-title-wrap">
+				<h3 class="widget-title">苹果CMS</h3>
+				<span class="suburl"><a href="https://yemu.xyz/category-1.html" target="_blank">更多<i class="icon font-add-circle"></i></a></span>
+			</div>			<div class="cat-site">				
+				<ul class="cat-list">					<li><span class="list-date">01/15</span><a title="苹果CMS V10 - 二开仿某豆网站粉红色精致模板" href="https://yemu.xyz/post/155.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS V10 - 二开仿某豆网站粉红色精致模板</a></li>					<li><span class="list-date">07/04</span><a title="苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作" href="https://yemu.xyz/post/154.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS用定时任务功能自动完成采集资源、生成静态视频文章等操作</a></li>					<li><span class="list-date">06/11</span><a title="苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）" href="https://yemu.xyz/post/153.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS V10 -  漂亮UI仿芒果TV听书双端模板（十八码修复无错开源版）</a></li>					<li><span class="list-date">06/10</span><a title="苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化" href="https://yemu.xyz/post/152.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS模板对页面title标题、keywords关键词、description描述的基本SEO优化</a></li>					<li><span class="list-date">06/06</span><a title="苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板" href="https://yemu.xyz/post/149.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS V10 - 仿西瓜影院终端自适应轻量SEO影视模板</a></li>					<li><span class="list-date">06/05</span><a title="苹果CMS V10 - 奇热网轻量简洁终端自适应利于SEO影视模板" href="https://yemu.xyz/post/147.html" rel="bookmark"><i class="icon font-youhui"></i>苹果CMS V10 - 奇热网轻量简洁终端自适应利于SEO影视模板</a></li>				</ul>
+			</div>
+		</div>		<div class="line-box wow fadeInDown">
+			<div class="side-title-wrap">
+				<h3 class="widget-title">WEB播放器</h3>
+				<span class="suburl"><a href="https://yemu.xyz/category-2.html" target="_blank">更多<i class="icon font-add-circle"></i></a></span>
+			</div>			<div class="cat-site">				
+				<ul class="cat-list">					<li><span class="list-date">06/06</span><a title="播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频" href="https://yemu.xyz/post/150.html" rel="bookmark"><i class="icon font-youhui"></i>播放器如何自动识别MP4、M3U8、FLV等视频格式，加载正确插件类型播放视频</a></li>					<li><span class="list-date">06/05</span><a title="M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置" href="https://yemu.xyz/post/148.html" rel="bookmark"><i class="icon font-youhui"></i>M3U8视频播放插件hls.js播放缓存参数maxBufferSize和maxBufferLength设置</a></li>					<li><span class="list-date">05/26</span><a title="H5播放器获取/?url=视频地址的几种常用方法" href="https://yemu.xyz/post/130.html" rel="bookmark"><i class="icon font-youhui"></i>H5播放器获取/?url=视频地址的几种常用方法</a></li>					<li><span class="list-date">05/24</span><a title="阿里云H5播放器Aliplayer - 试看功能，试看结束弹出开通会员提示框" href="https://yemu.xyz/post/125.html" rel="bookmark"><i class="icon font-youhui"></i>阿里云H5播放器Aliplayer - 试看功能，试看结束弹出开通会员提示框</a></li>					<li><span class="list-date">05/19</span><a title="HLS.js - 详解播放器最常用插件之一" href="https://yemu.xyz/post/111.html" rel="bookmark"><i class="icon font-youhui"></i>HLS.js - 详解播放器最常用插件之一</a></li>					<li><span class="list-date">05/17</span><a title="H5播放器合集-盘点那些开源、免费、强大、好看、的HTML5播放器（持续更新中）" href="https://yemu.xyz/post/103.html" rel="bookmark"><i class="icon font-youhui"></i>H5播放器合集-盘点那些开源、免费、强大、好看、的HTML5播放器（持续更新中）</a></li>				</ul>
+			</div>
+		</div>		<div class="line-box wow fadeInDown">
+			<div class="side-title-wrap">
+				<h3 class="widget-title">建站开发</h3>
+				<span class="suburl"><a href="https://yemu.xyz/category-4.html" target="_blank">更多<i class="icon font-add-circle"></i></a></span>
+			</div>			<div class="cat-site">				
+				<ul class="cat-list">					<li><span class="list-date">01/19</span><a title="宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法" href="https://yemu.xyz/post/156.html" rel="bookmark"><i class="icon font-youhui"></i>宝塔面板服务器禁止指定IP或者IP段访问的几种常见方法</a></li>					<li><span class="list-date">06/09</span><a title="CSS基础 - 实现隐藏滚动条并可以滚动内容效果" href="https://yemu.xyz/post/151.html" rel="bookmark"><i class="icon font-youhui"></i>CSS基础 - 实现隐藏滚动条并可以滚动内容效果</a></li>					<li><span class="list-date">06/02</span><a title="Masonry - 非常简单实用的瀑布流插件（附实例和中文文档）" href="https://yemu.xyz/post/144.html" rel="bookmark"><i class="icon font-youhui"></i>Masonry - 非常简单实用的瀑布流插件（附实例和中文文档）</a></li>					<li><span class="list-date">05/30</span><a title="Isotope.js超好看前端响应式JS插件，动态实现瀑布流布局排版、筛选、排序等功能" href="https://yemu.xyz/post/137.html" rel="bookmark"><i class="icon font-youhui"></i>Isotope.js超好看前端响应式JS插件，动态实现瀑布流布局排版、筛选、排序等功能</a></li>					<li><span class="list-date">05/26</span><a title="JQuery判断当前设备是否为移动终端、判断当前浏览器内核类型" href="https://yemu.xyz/post/129.html" rel="bookmark"><i class="icon font-youhui"></i>JQuery判断当前设备是否为移动终端、判断当前浏览器内核类型</a></li>					<li><span class="list-date">05/24</span><a title="JavaScript的delay()函数让append和appendTo动态添加元素有Lazyload的懒加载动态效果" href="https://yemu.xyz/post/126.html" rel="bookmark"><i class="icon font-youhui"></i>JavaScript的delay()函数让append和appendTo动态添加元素有Lazyload的懒加载动态效果</a></li>				</ul>
+			</div>
+		</div>	</div>		<div class="link-box box-shadow wow fadeInDown"><!--友情链接-->
+		<section class="links-title">
+			<span class="suburl"><a href="/" target="_blank">更多<i class="icon font-add-circle"></i></a></span>
+			<h3>友情链接</h3>
+			<span class="linksub">友情链接副标题文字</span>
+		</section>
+		<ul id="links-home">
+			<li class="link-item"><a href="https://www.zblogcn.com/" target="_blank" title="Z-Blog">Z-Blog</a></li><li class="link-item"><a href="https://yemu.xyz/" target="_blank" title="夜幕解析">夜幕解析</a></li>		</ul>
+	</div>	</main>
+<footer class="footer bg-dark">
+	<div class="container clearfix">
+		<div class="footer-fill">
+			<div class="footer-column">
+				<div class="footer-menu">
+					<a rel="nofollow" href="/sitemaps.xml" target="_blank">网站地图</a><a rel="nofollow" href="/" target="_blank">文章归档</a><a rel="nofollow" href="/" target="_blank">隐私保护</a><a rel="nofollow" href="/" target="_blank">关于我们</a>				</div>
+				<div class="footer-copyright text-xs">
+					Copyright<i class="icon font-banquan"></i>2020-2023<a href="/">十八码</a>. 基于<a href="http://www.zblogcn.com/" rel="nofollow" title="Z-BlogPHP" target="_blank">Z-BlogPHP</a>搭建 .<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3OfJPCBspXNCKFcD",ck:"3OfJPCBspXNCKFcD"})</script>				</div>
+			</div>
+		</div>
+		<div class="footer-hidden-xs">
+			<div class="f-last-line "><p>十八码(18ma.cn) - 苹果CMS模板插件与WEB播放器整合使用经验交流社区</p></div>
+		</div>
+		<div class="footer-links">
+			<span><a class="ico-ico" href="https://beian.miit.gov.cn" rel="nofollow" target="_blank" title="赣ICP备2023005055号"><img src="/zb_users/theme/hopelee/style/images/icp.png" alt="赣ICP备2023005055号">赣ICP备2023005055号</a><a class="beian-ico" target="_blank" href="/" rel="nofollow" title=""><img src="/zb_users/theme/hopelee/style/images/beian.png" alt=""></a>. 安全运行<span id="iday"></span>天 <script>function siteRun(d){var nowD=new Date();return parseInt((nowD.getTime()-Date.parse(d))/24/60/60/1000)} document.getElementById("iday").innerHTML=siteRun("2020/05/01");</script></span>
+		</div>
+	</div>
+	<div id="backtop" class="backtop">
+		<div class="bt-box top" title="返回顶部"><i class="icon font-top"></i></div>
+				<div class="bt-box bottom" title="网页底部"><i class="icon font-bottom"></i></div>
+	</div>
+		<div class="none">
+		<script src="https://yemu.xyz/zb_users/theme/hopelee/script/jquery.pjax.js"></script>
+		<script src="https://yemu.xyz/zb_users/theme/hopelee/script/custom.js?v=2023-05-04"></script>
+		<script src="https://yemu.xyz/zb_users/theme/hopelee/script/wow.min.js"></script>
+		<script src="https://yemu.xyz/zb_users/theme/hopelee/script/jquery.lazyload.js"></script>
+		    <script src="https://yemu.xyz/zb_users/plugin/dayuser/style/js/frontend.js"></script>
+<style type="text/css">span.srt{float:right;font-size:13px;position:relative;cursor:pointer;}span.srt:before{content:"";background-size:14px; background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFlklEQVR4Xu1bQXbaSBD9pYhMdiO4wNjv2WwHn8D4BCYniLMMLMKcIPgEIe8NeGl8A+cEZk5gvEXznskFbLKLbUY1rwVMsNRNt1qCKAMskbq76nf1r+qqEmHDf7Th+mMLwNYC1oCA1xlWABw6RDsMVADeIdDO4tIMHgE0AjAmwiD4BwO8cG/G73bFfyv7rewIeH/6xw5xjUE1Ini2GjDzgIj6AfPFuFEe2M6jGpcpAN7HW895NXnPAZpplFYJy0CfCafjd/v9rIDIDIDSmf9hVYpHlRVWwcDbLCwiNQDemV8l5vPomdbtEDO+gDA/3xUCftWNkTxvBw/u6fiP3bHF2HBIKgBKXf8jgKZucQb+IkY/cNDHN3egElgcIbyaVJwAVUGWRDjWzp3SGqwAEILSy6crIhLsLv2JHWZCG+Re2jJ5CMjLpxqBWkT4bclaY3bw2oYbEgOgUz5UHNwaN8o93e4lee51hic6IALQ63F97zLJvIkAmCo/uVUyPOM0eHTbac6kTniv6zcJaMk4gxljBh+pyLHUGZ7fNcpvF9cwBmDZzs92vZYFK+sAEM+9s9sd4qdLAv0e9xByEITyIDq5q+8/09kYgGLXvyKgGlsQfMMPheoqd10GyswaezKiDN3kY+FoLtNceTGPFQCljt8C4UNelF+Uo9Qd9gB6EwOJuSfMfVF5KwCEn3cYV3lUfi5TseNfSi0B6EetNrEFFDvD66i7Y+ArP7g76zZ7FT+Ex+GXp76ME6JjEgGgMv2AcGTjc00IzvadKTFOBrqI0hgApctj+nTX2NNGf7aKpBknXKQDiOhU+TMHoDM8cYjOF2cK3d2jW8mL6Ue1jBKeDAVjAIrd4W30ghMwixtYphFemh1/5g1mfl43nxEAMuYXu3/f2H+WxdEttq7nJjs/l8UIAKlvZZzeNfZb61LKdJ0kyhvHAVLzJ3fX9lZnqkzS95IqbwSAcCcOT26fkR/45r5eVl59kwqexfs2ypsBIGF/5Nj1pQUzdhmSBT829+y0gq1rfAwAWVwdMB+s66q7LsXn68QB6PriAnG4KEjUdaxbyFWutwUgFk52fY7+t1EWUNp0AIpbDtiSYMwLbJQb3PhASFRgoomQjQqFpZch5sF9o3ywyoDkR80tLYwUO/4oWowMcngdXgbarIR2TMyjwCmcqq7yUgB+poSIDIRoRiusGTrugQwEKQCiqckhuo7kBEb39fLujzLVJOvKyniqVL6yNig9BjlOis4BkuYzlxRylADIcuyilY0fCgd5TYsLEKRF3CX5TDUAYblpMopVWnKcHVIVRpYR+NLy+E9XGgsm1/HmDb64q5dPVByi7Q8odoeDaNExZNVHdzdPR0FZxCW3siybrQVAWR6PNCEkYems31VliE1ymVoAhLDKBokcgKBSnhmf7xv7NR3YRgDM2DV2SxT/R9tRdAtm9XzaEzA5JyCmZJIirjEAy5oQppGWXZ+eDSAiUCPgXNanGDZvMFdNs9jGAAhBZ6jHXeP3HHMr+OZ+WiU5ep3h+1m/YKwDPanyQuxEAHwHQd2OEgZLcFrj+t6Fze6qxuh6km2UtwLABISQGwQQjDacwmfbouqsVfYNASdL23JFqx4VajbrJLaAxR1SeYfoLoo+fyL0A0Yf5H5ZJqjX9Q8dQpUZ4pxrWRzgi+Ch0LQ9dqkACK1BtMsHEA2LymZmmVkL4gQh/AJE1oCpOz7TZmxqJu0Njs6bGoD5hMIamCD6eG36/nX6/vdcnHVitLPqSc4MgDk3OC8nTQ7PbDKL0CEwVZx6gfOibXPWre8COsGUrN39u+YgmH40lcIqRETHRL20pr52ABYXDD+bI6o6TDtMLD6b8xYvWGJ3gTkf8CgADcDcNw1mbDfJ2g2mWTBvYzPlgLwpZyLPFgATlP7P7/wL8KUNbioYYvsAAAAASUVORK5CYII=);background-repeat:no-repeat;position:absolute;top:6px;left:-18px;width:16px;height:16px;}.bdhot li{line-height:2;padding:0;position:relative;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}span.top-num{color:rgba(136,136,136,.88);margin-right:6px;font-weight:bold;    width:18px;display:inline-block;text-align:center;}span.top-num:after{content:".";}.bdhot li:nth-child(1) span.top-num{color:#F60;}.bdhot li:nth-child(2) span.top-num{color:#fdbb94;}.bdhot li:nth-child(3) span.top-num{color:#75cb58;}span.r-txt{display:none;padding:0 2px;text-align:center;vertical-align:middle;font-style:normal;color:#fff;overflow:hidden;line-height:16px;height:16px;font-size:12px;border-radius:4px;font-weight:200;position:relative;top:5px;float:right;margin-left:5px;}span.r-txt.c-text-fei_2nTcS{background-color:#ff7413;display:inline-block;}span.r-txt.c-text-bao_3s8Nn{background-color:#d61a6e;display:inline-block;}span.r-txt.c-text-new_YE8mj{background-color:#ff455b;display:inline-block;}span.r-txt.c-text-hot_3ZhI9{background-color:#ff9812;display:inline-block;}.bdhot2{display:none;}</style>
+	</div>
+</footer>
+</body>
+</html><!--48.49 ms , 22 queries , 5084kb memory , 0 error-->

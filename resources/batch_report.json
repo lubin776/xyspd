@@ -1,0 +1,799 @@
+[
+  {
+    "name": "0",
+    "api": "https://0.12yue.de5.net/5/0",
+    "base": "https://0.12yue.de5.net/5/",
+    "ok": true,
+    "assets": [
+      {
+        "file": "zyapi.php",
+        "url": "http://y.ds05.cn/zyapi.php",
+        "bytes": 6340
+      },
+      {
+        "file": "jueson.jpg",
+        "url": "https://0.12yue.de5.net/5/lib/jueson.jpg",
+        "bytes": 115682
+      },
+      {
+        "file": "xs.jar",
+        "url": "https://0.12yue.de5.net/5/lib/xs.jar",
+        "bytes": 2014197
+      },
+      {
+        "file": "bd.jx.cn",
+        "url": "https://bd.jx.cn/?url=",
+        "bytes": 2168
+      },
+      {
+        "file": "result.m3u",
+        "url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+        "error": "HTTP Error 400: Bad Request"
+      },
+      {
+        "file": "使用说明.json",
+        "url": "https://gh-proxy.com/raw.githubusercontent.com/lubin776/0/refs/heads/main/tvbox/x/lib/使用说明.json",
+        "bytes": 847
+      },
+      {
+        "file": "菠菜园下载.json",
+        "url": "https://gh-proxy.com/raw.githubusercontent.com/lubin776/0/refs/heads/main/tvbox/x/lib/菠菜园下载.json",
+        "bytes": 4440
+      },
+      {
+        "file": "jx.77flv.cc",
+        "url": "https://jx.77flv.cc/?url=",
+        "bytes": 3840
+      },
+      {
+        "file": "jx.xmflv.com",
+        "url": "https://jx.xmflv.com/?url=",
+        "bytes": 10235
+      },
+      {
+        "file": "jx.xyflv.cc",
+        "url": "https://jx.xyflv.cc/",
+        "bytes": 1686
+      },
+      {
+        "file": "jx.xymp4.cc",
+        "url": "https://jx.xymp4.cc/?url=",
+        "bytes": 20955
+      },
+      {
+        "file": "index.php",
+        "url": "https://jx.yparse.com/index.php?url=",
+        "bytes": 3209
+      },
+      {
+        "file": "jx.zui.cm",
+        "url": "https://jx.zui.cm/?url=",
+        "error": "<urlopen error [Errno -2] Name or service not known>"
+      },
+      {
+        "file": "jiexi.php",
+        "url": "https://www.playm3u8.cn/jiexi.php?url=",
+        "bytes": 1345
+      },
+      {
+        "file": "yemu.xyz",
+        "url": "https://yemu.xyz/?url=",
+        "bytes": 68420
+      }
+    ]
+  },
+  {
+    "name": "1",
+    "api": "https://0.12yue.de5.net/5/1",
+    "base": "https://0.12yue.de5.net/5/",
+    "ok": true,
+    "assets": [
+      {
+        "file": "vod",
+        "url": "http://api.guangsuapi.com/api.php/provide/vod",
+        "bytes": 6963
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://api.xinlangapi.com/xinlangapi.php/provide/vod",
+        "bytes": 7158
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+        "bytes": 6268
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://cj.ffzyapi.com/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://cj.lziapi.com/api.php/provide/vod",
+        "bytes": 7275
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://ffzy1.tv/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://ffzy5.tv/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "zyapi.php",
+        "url": "http://y.ds05.cn/zyapi.php",
+        "bytes": 6340
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://zuidazy.me/api.php/provide/vod",
+        "bytes": 6901
+      },
+      {
+        "file": "jueson.jpg",
+        "url": "https://0.12yue.de5.net/5/lib/jueson.jpg",
+        "bytes": 115682
+      },
+      {
+        "file": "xs.jar",
+        "url": "https://0.12yue.de5.net/5/lib/xs.jar",
+        "bytes": 2014197
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://360zy.com/api.php/provide/vod",
+        "bytes": 7101
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.apibdzy.com/api.php/provide/vod",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.ffzyapi.com/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.guangsuapi.com/api.php/provide/vod",
+        "bytes": 6963
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.niuniuzy.me/api.php/provide/vod",
+        "bytes": 6841
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.ukuapi88.com/api.php/provide/vod",
+        "bytes": 6126
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.wujinapi.cc/api.php/provide/vod",
+        "bytes": 7376
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.wujinapi.com/api.php/provide/vod",
+        "bytes": 7376
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.wujinapi.me/api.php/provide/vod",
+        "bytes": 7376
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.wujinapi.net/api.php/provide/vod",
+        "bytes": 7376
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.xinlangapi.com/xinlangapi.php/provide/vod",
+        "bytes": 7158
+      },
+      {
+        "file": "json",
+        "url": "https://api.yparse.com/api/json",
+        "error": "HTTP Error 502: Bad Gateway"
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://api.zuidapi.com/api.php/provide/vod",
+        "bytes": 6901
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://app.bfzyapi.com/api.php/provide/vod",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "file": "bd.jx.cn",
+        "url": "https://bd.jx.cn/?url=",
+        "bytes": 2168
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://bfzyapi.com/api.php/provide/vod",
+        "bytes": 7085
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://caiji.maotaizy.cc/api.php/provide/vod",
+        "bytes": 7697
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://caiji.moduapi.cc/api.php/provide/vod",
+        "bytes": 6652
+      },
+      {
+        "file": "result.m3u",
+        "url": "https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u",
+        "error": "HTTP Error 400: Bad Request"
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://cj.ffzyapi.com/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://cj.lziapi.com/api.php/provide/vod",
+        "bytes": 7275
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://cj.rycjapi.com/api.php/provide/vod",
+        "bytes": 6593
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://cj.yayazy.net/api.php/provide/vod",
+        "bytes": 6841
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://collect.wolongzy.cc/api.php/provide/vod",
+        "error": "<urlopen error [Errno -5] No address associated with hostname>"
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://collect.wolongzyw.com/api.php/provide/vod",
+        "bytes": 6990
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://dbzy.tv/api.php/provide/vod",
+        "bytes": 8016
+      },
+      {
+        "file": "使用说明.json",
+        "url": "https://gh-proxy.com/raw.githubusercontent.com/lubin776/0/refs/heads/main/tvbox/x/lib/使用说明.json",
+        "bytes": 847
+      },
+      {
+        "file": "菠菜园下载.json",
+        "url": "https://gh-proxy.com/raw.githubusercontent.com/lubin776/0/refs/heads/main/tvbox/x/lib/菠菜园下载.json",
+        "bytes": 4440
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://hhzyapi.com/api.php/provide/vod",
+        "bytes": 6816
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://jinyingzy.com/api.php/provide/vod",
+        "bytes": 7167
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://jszyapi.com/api.php/provide/vod",
+        "bytes": 6943
+      },
+      {
+        "file": "jx.77flv.cc",
+        "url": "https://jx.77flv.cc/?url=",
+        "bytes": 3840
+      },
+      {
+        "file": "jx.xmflv.com",
+        "url": "https://jx.xmflv.com/?url=",
+        "bytes": 10235
+      },
+      {
+        "file": "jx.xyflv.cc",
+        "url": "https://jx.xyflv.cc/",
+        "bytes": 1686
+      },
+      {
+        "file": "jx.xymp4.cc",
+        "url": "https://jx.xymp4.cc/?url=",
+        "bytes": 20955
+      },
+      {
+        "file": "index.php",
+        "url": "https://jx.yparse.com/index.php?url=",
+        "bytes": 3209
+      },
+      {
+        "file": "jx.zui.cm",
+        "url": "https://jx.zui.cm/?url=",
+        "error": "<urlopen error [Errno -2] Name or service not known>"
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://jyzyapi.com/provide/vod",
+        "bytes": 7167
+      },
+      {
+        "file": "vod_073a07",
+        "url": "https://m3u8.apiyhzy.com/api.php/provide/vod",
+        "bytes": 5732
+      }
+    ]
+  },
+  {
+    "name": "2",
+    "api": "https://0.12yue.de5.net/5/2",
+    "base": "https://0.12yue.de5.net/5/",
+    "ok": true,
+    "assets": [
+      {
+        "file": "bn",
+        "url": "http://111.170.140.70:19987/app/bn",
+        "error": "<urlopen error timed out>"
+      },
+      {
+        "file": "bn",
+        "url": "http://113.31.180.218:19987/app/bn",
+        "error": "<urlopen error timed out>"
+      },
+      {
+        "file": "114.66.27.208_806",
+        "url": "http://114.66.27.208:806",
+        "error": "<urlopen error timed out>"
+      },
+      {
+        "file": "bn",
+        "url": "http://124.221.3.182:19987/app/bn",
+        "bytes": 64
+      },
+      {
+        "file": "bili_cookie.txt",
+        "url": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt",
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "file": "bn_4e5818",
+        "url": "http://175.178.65.250:19987/app/bn",
+        "bytes": 64
+      },
+      {
+        "file": "38.76.197.172_12521",
+        "url": "http://38.76.197.172:12521",
+        "error": "Remote end closed connection without response"
+      },
+      {
+        "file": "38.76.197.172_16969",
+        "url": "http://38.76.197.172:16969",
+        "error": "Remote end closed connection without response"
+      },
+      {
+        "file": "vod",
+        "url": "http://api.guangsuapi.com/api.php/provide/vod",
+        "bytes": 6963
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://api.xinlangapi.com/xinlangapi.php/provide/vod",
+        "bytes": 7158
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://caiji.dyttzyapi.com/api.php/provide/vod",
+        "bytes": 6268
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://cj.ffzyapi.com/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://cj.lziapi.com/api.php/provide/vod",
+        "bytes": 7147
+      },
+      {
+        "file": "app",
+        "url": "http://cmsyun2.qijiyun.vip/api.php/app/",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "file": "{cateId}_{catePg}.html",
+        "url": "http://dyxz.tv/list/{cateId}_{catePg}.html",
+        "bytes": 655
+      },
+      {
+        "file": "feimo.fun",
+        "url": "http://feimo.fun",
+        "bytes": 649394
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://ffzy1.tv/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://ffzy5.tv/api.php/provide/vod",
+        "bytes": 6397
+      },
+      {
+        "file": "v.rbotv.cn",
+        "url": "http://v.rbotv.cn",
+        "bytes": 3
+      },
+      {
+        "file": "www.misoso.shop",
+        "url": "http://www.misoso.shop",
+        "bytes": 9659
+      },
+      {
+        "file": "www.xiaocgege.shop",
+        "url": "http://www.xiaocgege.shop",
+        "bytes": 655320
+      },
+      {
+        "file": "fishhxq.php",
+        "url": "http://www.小不点.com/api/2026/fishhxq.php",
+        "error": "'latin-1' codec can't encode characters in position 4-6: ordinal not in range(256)"
+      },
+      {
+        "file": "xiaocge.fun",
+        "url": "http://xiaocge.fun",
+        "error": "<urlopen error [Errno -2] Name or service not known>"
+      },
+      {
+        "file": "xiaocgege.shop",
+        "url": "http://xiaocgege.shop",
+        "bytes": 649394
+      },
+      {
+        "file": "zyapi.php",
+        "url": "http://y.ds05.cn/zyapi.php",
+        "bytes": 6340
+      },
+      {
+        "file": "vod_073a07",
+        "url": "http://zuidazy.me/api.php/provide/vod",
+        "bytes": 6901
+      },
+      {
+        "file": "drpy.min.js",
+        "url": "https://0.12yue.de5.net/5/lib/drpy.min.js",
+        "bytes": 38663
+      },
+      {
+        "file": "drpy2.min.js",
+        "url": "https://0.12yue.de5.net/5/lib/drpy2.min.js",
+        "bytes": 43440
+      },
+      {
+        "file": "jueson.jpg",
+        "url": "https://0.12yue.de5.net/5/lib/jueson.jpg",
+        "bytes": 115682
+      },
+      {
+        "file": "p.jar",
+        "url": "https://0.12yue.de5.net/5/lib/p.jar",
+        "bytes": 2097428
+      },
+      {
+        "file": "spider.jar",
+        "url": "https://0.12yue.de5.net/5/lib/spider.jar",
+        "bytes": 597190
+      },
+      {
+        "file": "中医药.json",
+        "url": "https://0.12yue.de5.net/5/lib/中医药.json",
+        "bytes": 1387
+      },
+      {
+        "file": "儿童口才1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童口才1.json",
+        "bytes": 1419
+      },
+      {
+        "file": "儿童思维1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童思维1.json",
+        "bytes": 895
+      },
+      {
+        "file": "儿童拼音1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童拼音1.json",
+        "bytes": 1127
+      },
+      {
+        "file": "儿童武术1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童武术1.json",
+        "bytes": 607
+      },
+      {
+        "file": "儿童硬笔1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童硬笔1.json",
+        "bytes": 804
+      },
+      {
+        "file": "儿童编程1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童编程1.json",
+        "bytes": 384
+      },
+      {
+        "file": "儿童英语1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童英语1.json",
+        "bytes": 753
+      },
+      {
+        "file": "儿童识字1.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童识字1.json",
+        "bytes": 847
+      },
+      {
+        "file": "兔小贝.js",
+        "url": "https://0.12yue.de5.net/5/lib/兔小贝.js",
+        "bytes": 1030
+      },
+      {
+        "file": "初中课堂.json",
+        "url": "https://0.12yue.de5.net/5/lib/初中课堂.json",
+        "bytes": 41230
+      },
+      {
+        "file": "博看听书.js",
+        "url": "https://0.12yue.de5.net/5/lib/博看听书.js",
+        "bytes": 2063
+      },
+      {
+        "file": "哔哩合集1.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩合集1.json",
+        "bytes": 165604
+      },
+      {
+        "file": "哔哩哔哩听书.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩听书.json",
+        "bytes": 1379
+      },
+      {
+        "file": "哔哩哔哩小品.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩小品.json",
+        "bytes": 1145
+      },
+      {
+        "file": "哔哩哔哩戏曲.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩戏曲.json",
+        "bytes": 4569
+      },
+      {
+        "file": "哔哩哔哩演唱会.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩演唱会.json",
+        "bytes": 24271
+      },
+      {
+        "file": "哔哩哔哩相声.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩相声.json",
+        "bytes": 693
+      },
+      {
+        "file": "外语课堂.json",
+        "url": "https://0.12yue.de5.net/5/lib/外语课堂.json",
+        "bytes": 24844
+      }
+    ]
+  },
+  {
+    "name": "3",
+    "api": "https://0.12yue.de5.net/5/3",
+    "base": "https://0.12yue.de5.net/5/",
+    "ok": true,
+    "assets": [
+      {
+        "file": "bili_cookie饭.txt",
+        "url": "http://127.0.0.1:9978/file/TVBox/bili_cookie饭.txt",
+        "error": "<urlopen error [Errno 111] Connection refused>"
+      },
+      {
+        "file": "b.jar",
+        "url": "https://0.12yue.de5.net/5/lib/b.jar",
+        "bytes": 258389
+      },
+      {
+        "file": "csp_XYQHiker_兔小贝.jar",
+        "url": "https://0.12yue.de5.net/5/lib/csp_XYQHiker_兔小贝.jar",
+        "bytes": 386135
+      },
+      {
+        "file": "jueson.jpg",
+        "url": "https://0.12yue.de5.net/5/lib/jueson.jpg",
+        "bytes": 115682
+      },
+      {
+        "file": "儿童口才.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童口才.json",
+        "bytes": 1123
+      },
+      {
+        "file": "儿童思维.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童思维.json",
+        "bytes": 728
+      },
+      {
+        "file": "儿童拼音.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童拼音.json",
+        "bytes": 919
+      },
+      {
+        "file": "儿童武术.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童武术.json",
+        "bytes": 570
+      },
+      {
+        "file": "儿童硬笔.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童硬笔.json",
+        "bytes": 723
+      },
+      {
+        "file": "儿童编程.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童编程.json",
+        "bytes": 433
+      },
+      {
+        "file": "儿童英语.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童英语.json",
+        "bytes": 629
+      },
+      {
+        "file": "儿童识字.json",
+        "url": "https://0.12yue.de5.net/5/lib/儿童识字.json",
+        "bytes": 680
+      },
+      {
+        "file": "兔小贝.json",
+        "url": "https://0.12yue.de5.net/5/lib/兔小贝.json",
+        "bytes": 2168
+      },
+      {
+        "file": "兔小贝2.json",
+        "url": "https://0.12yue.de5.net/5/lib/兔小贝2.json",
+        "bytes": 2892
+      },
+      {
+        "file": "兴趣培养.json",
+        "url": "https://0.12yue.de5.net/5/lib/兴趣培养.json",
+        "bytes": 6223
+      },
+      {
+        "file": "哔哩合集.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩合集.json",
+        "bytes": 56916
+      },
+      {
+        "file": "哔哩哔哩初中.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩初中.json",
+        "bytes": 8770
+      },
+      {
+        "file": "哔哩哔哩小学.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩小学.json",
+        "bytes": 6762
+      },
+      {
+        "file": "哔哩哔哩高中.json",
+        "url": "https://0.12yue.de5.net/5/lib/哔哩哔哩高中.json",
+        "bytes": 8763
+      },
+      {
+        "file": "央视经典.json",
+        "url": "https://0.12yue.de5.net/5/lib/央视经典.json",
+        "bytes": 558
+      },
+      {
+        "file": "小灯塔人文.json",
+        "url": "https://0.12yue.de5.net/5/lib/小灯塔人文.json",
+        "bytes": 10196
+      },
+      {
+        "file": "小灯塔国学.json",
+        "url": "https://0.12yue.de5.net/5/lib/小灯塔国学.json",
+        "bytes": 10194
+      },
+      {
+        "file": "小灯塔地理.json",
+        "url": "https://0.12yue.de5.net/5/lib/小灯塔地理.json",
+        "bytes": 10195
+      },
+      {
+        "file": "小灯塔百科.json",
+        "url": "https://0.12yue.de5.net/5/lib/小灯塔百科.json",
+        "bytes": 10192
+      },
+      {
+        "file": "小灯塔科学.json",
+        "url": "https://0.12yue.de5.net/5/lib/小灯塔科学.json",
+        "bytes": 10195
+      },
+      {
+        "file": "幼儿启蒙.json",
+        "url": "https://0.12yue.de5.net/5/lib/幼儿启蒙.json",
+        "bytes": 5603
+      },
+      {
+        "file": "幼小衔接.json",
+        "url": "https://0.12yue.de5.net/5/lib/幼小衔接.json",
+        "bytes": 6575
+      },
+      {
+        "file": "播视童趣.json",
+        "url": "https://0.12yue.de5.net/5/lib/播视童趣.json",
+        "bytes": 2746
+      },
+      {
+        "file": "益智动画.json",
+        "url": "https://0.12yue.de5.net/5/lib/益智动画.json",
+        "bytes": 1035
+      },
+      {
+        "file": "bd.jx.cn",
+        "url": "https://bd.jx.cn/?url=",
+        "bytes": 2168
+      },
+      {
+        "file": "jx.77flv.cc",
+        "url": "https://jx.77flv.cc/?url=",
+        "bytes": 3840
+      },
+      {
+        "file": "jx.xmflv.com",
+        "url": "https://jx.xmflv.com/?url=",
+        "bytes": 10235
+      },
+      {
+        "file": "jx.xyflv.cc",
+        "url": "https://jx.xyflv.cc/",
+        "bytes": 1686
+      },
+      {
+        "file": "jx.xymp4.cc",
+        "url": "https://jx.xymp4.cc/?url=",
+        "bytes": 20955
+      },
+      {
+        "file": "index.php",
+        "url": "https://jx.yparse.com/index.php?url=",
+        "bytes": 3209
+      },
+      {
+        "file": "jx.zui.cm",
+        "url": "https://jx.zui.cm/?url=",
+        "error": "<urlopen error [Errno -2] Name or service not known>"
+      },
+      {
+        "file": "jiexi.php",
+        "url": "https://www.playm3u8.cn/jiexi.php?url=",
+        "bytes": 1345
+      },
+      {
+        "file": "yemu.xyz",
+        "url": "https://yemu.xyz/?url=",
+        "bytes": 68420
+      }
+    ]
+  }
+]
